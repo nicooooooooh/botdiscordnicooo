@@ -21,6 +21,13 @@ client.on("ready", () => {
    }
  
  });
+
+client.on('guildMemberAdd', member => {
+	let channel = member.guild.channels.cache.get('ID DE CANAL DONDE SE ENVIARAN BIENVENIDA');
+	if(!channel) return;
+	channel.send("Bienvenido: " + member.user.tag);
+});
+	
  
  
 client.login("AQUI_VA_EL_TOKEN_OMEGALUL");
